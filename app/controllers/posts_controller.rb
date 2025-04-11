@@ -3,7 +3,11 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.includes(:comments)
+    @posts = if params[:query].present?
+              Post.search_with_comments(params[:query])
+             else
+              Post.includes(:comments)
+             end
   end
 
   # GET /posts/1 or /posts/1.json
