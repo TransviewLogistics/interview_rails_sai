@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 
 gem "devise"
 
+gem 'elasticsearch', '~> 7.17'
+gem 'searchkick', '~> 5.0'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

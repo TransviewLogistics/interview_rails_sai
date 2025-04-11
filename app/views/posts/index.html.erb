@@ -2,6 +2,11 @@
 
 <h1>Posts</h1>
 
+<%= form_with url: posts_path, method: :GET do %>
+  <%= text_field_tag :query, params[:query], placeholder: "Search posts...", class: "form-control" %>
+  <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
+<% end %>
+
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
